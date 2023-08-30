@@ -23,6 +23,11 @@ export let useTeamStore = defineStore('team', {
             });
 
             // this.$state = r.default;
+        },
+        add(name, email){
+            this.$patch((state) => {
+                state.members.push({name: name, email: email, status: "Active"})
+            })
         }
     },
 
